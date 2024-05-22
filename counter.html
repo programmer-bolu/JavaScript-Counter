@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(241, 245, 248);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color: rgb(16,43,66);
+            font-size: 5em;
+            text-align: center;
+            margin-top: 20vh;
+        }
+        h2{
+            color: rgb(0,128,0);
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15em;
+        }
+        .button-flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 600px;
+            /* border: thin solid red; */
+            margin: auto;
+            min-height: 10px;
+        }
+        .button-flex button{
+            padding: 5px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:focus{
+            outline: medium solid blue;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Counter</h1>
+    <h2 id="count-number">0</h2>
+    <div class="button-flex">
+        <button onclick="func('decrease')">Decrease</button>
+        <button onclick="func('reset')">Reset</button>
+        <button onclick="func('increase')">Increase</button>
+    </div>
+
+    <script>
+        let index = 0
+        function func(params) {
+            if (params == 'increase'){
+                // INCREASE INDEX BY 1
+                index++
+            }
+            else if (params == 'decrease'){
+                // REDUCE INDEX BY 1
+                index--
+            }
+            else{
+                // CHANGE INDEX TO 0
+                index = 0
+            }
+            // console.log(index);
+            document.getElementById('count-number').textContent = index
+        }
+    </script>
+</body>
+</html>
